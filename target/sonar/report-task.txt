@@ -1,0 +1,6 @@
+projectKey=com.cybage.alm:JavaMavenSonarGithub_CalculatorDemo
+serverUrl=http://localhost:9000
+serverVersion=7.9.6.41879
+dashboardUrl=http://localhost:9000/dashboard?id=com.cybage.alm%3AJavaMavenSonarGithub_CalculatorDemo
+ceTaskId=AZPeVLKclz7uLPJnuO3q
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZPeVLKclz7uLPJnuO3q
