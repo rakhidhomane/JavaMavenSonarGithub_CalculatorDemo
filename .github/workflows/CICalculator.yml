@@ -41,8 +41,7 @@ jobs:
       - name: SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-             -Dsonar.projectKey=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo
+        run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo
 
       # Step 6: Check SonarCloud Quality Gate
       - name: Check SonarCloud Quality Gate
