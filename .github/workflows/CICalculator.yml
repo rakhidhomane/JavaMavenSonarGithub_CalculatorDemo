@@ -45,12 +45,15 @@ jobs:
 
       # Step 6: Check SonarCloud Quality Gate
       - name: Check SonarCloud Quality Gate
+        id: quality-gate
         run: |
           echo "Checking SonarCloud Quality Gate status..."
           sleep 30 # Wait for the analysis to complete
           response=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" \
-            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo")
+            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=rakhidhomane_GithubActionsNodeReactProject")
           status=$(echo $response | jq -r '.projectStatus.status')
+          echo "Quality Gate status: $status"
+          echo "::set-output name=status::$status"
           if [ "$status" != "OK" ]; then
             echo "Quality Gate failed: $status"
             exit 1
@@ -58,7 +61,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      # Step 7: Publish artifacts to Nexus
+      # Step 9: Publish artifacts to Nexus
       - name: Publish to Nexus
         env:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
