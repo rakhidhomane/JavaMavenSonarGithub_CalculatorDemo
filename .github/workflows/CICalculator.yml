@@ -50,10 +50,10 @@ jobs:
           echo "Checking SonarCloud Quality Gate status..."
           sleep 30 # Wait for the analysis to complete
           response=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" \
-            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=rakhidhomane_GithubActionsNodeReactProject")
+            "https://sonarcloud.io/api/qualitygates/project_status?projectKey=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo")
           status=$(echo $response | jq -r '.projectStatus.status')
           echo "Quality Gate status: $status"
-          echo "::set-output name=status::$status"
+          echo "STATUS=$status" >> $GITHUB_ENV
           if [ "$status" != "OK" ]; then
             echo "Quality Gate failed: $status"
             exit 1
