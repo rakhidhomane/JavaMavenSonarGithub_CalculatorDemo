@@ -52,18 +52,22 @@ jobs:
           response=$(curl -s -u "${{ secrets.SONAR_TOKEN }}:" \
             "https://sonarcloud.io/api/qualitygates/project_status?projectKey=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo")
           status=$(echo $response | jq -r '.projectStatus.status')
-          echo "Quality Gate status: $status"
-          echo "STATUS=$status" >> $GITHUB_ENV
-          if [ "$status" != "OK" ]; then
-            echo "Quality Gate failed: $status"
+          if [ "$status" = "OK" ]; then
+            echo "Quality Gate status: SUCCESS"
+            echo "QUALITY_GATE_STATUS=SUCCESS" >> $GITHUB_ENV
+          else
+            echo "Quality Gate status: FAILED"
+            echo "QUALITY_GATE_STATUS=FAILED" >> $GITHUB_ENV
             exit 1
           fi
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      # Step 9: Publish artifacts to Nexus
+      # Step 7: Publish artifacts to Nexus
       - name: Publish to Nexus
         env:
           NEXUS_USER: ${{ secrets.NEXUS_USER }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
         run: mvn deploy
+
+     
