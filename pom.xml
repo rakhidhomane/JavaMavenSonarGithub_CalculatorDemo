@@ -4,9 +4,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.cybage.alm</groupId>
-  <artifactId>JavaMavenSonarGithub_CalculatorDemo</artifactId>
-  <version>1.0-SNAPSHOT</version>
+<groupId>com.github.rakhidhomane</groupId>
+<artifactId>JavaMavenSonarGithub_CalculatorDemo</artifactId>
+<version>1.0-SNAPSHOT</version>
+
 
   <name>JavaMavenSonarGithub_CalculatorDemo</name>
   <url>http://www.example.com</url>
@@ -81,10 +82,14 @@
     </plugins>
   </build>
   <distributionManagement>
-      <repository>
-	      <id>github</id>
-              <url>https://maven.pkg.github.com/rakhidhomane/JavaMavenSonarGithub_CalculatorDemo</url>
-      </repository>
+     <repository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/rakhidhomane/JavaMavenSonarGithub_CalculatorDemo</url>
+  </repository>
+  <snapshotRepository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/rakhidhomane/JavaMavenSonarGithub_CalculatorDemo</url>
+  </snapshotRepository>
   </distributionManagement>
 
 </project>
