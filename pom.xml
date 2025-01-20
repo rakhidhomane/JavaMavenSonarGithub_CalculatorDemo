@@ -81,18 +81,10 @@
     </plugins>
   </build>
   <distributionManagement>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <url>http://172.27.59.174:8081/repository/JavaMavenSonarGithub_CalculatorDemo_26074//</url>
-    </snapshotRepository>
-    <repository>
-      <id>nexus-releases</id>
-      <url>http://172.27.59.174:8081/repository/JavaMavenSonarGithub_CalculatorDemo_26074//</url>
-    </repository>
-	  <repository>
-    <id>github</id>
-    <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
-  </repository>
+      <repository>
+	      <id>github</id>
+              <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+      </repository>
   </distributionManagement>
 
 </project>
