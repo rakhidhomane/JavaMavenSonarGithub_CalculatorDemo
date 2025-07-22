@@ -1,1 +1,2 @@
 [![Java CI with SonarCloud and Nexus](https://github.com/rakhidhomane/JavaMavenSonarGithub_CalculatorDemo/actions/workflows/CICalculator.yml/badge.svg)](https://github.com/rakhidhomane/JavaMavenSonarGithub_CalculatorDemo/actions/workflows/CICalculator.yml)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo)](https://sonarcloud.io/summary/new_code?id=rakhidhomane_JavaMavenSonarGithub_CalculatorDemo)
