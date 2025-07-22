@@ -62,6 +62,7 @@ jobs:
           fi
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          
       # Step 7: Deploy Maven artifacts to GitHub Packages
       - name: Deploy Maven Artifacts
         env:
