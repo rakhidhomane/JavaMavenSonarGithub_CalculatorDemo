@@ -1,4 +1,4 @@
-name: Java CI with SonarCloud and Nexus
+name: Java CI with SonarCloud 
 
 on:
   push:
